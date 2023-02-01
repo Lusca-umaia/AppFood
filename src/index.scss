@@ -6,3 +6,36 @@
     box-sizing: border-box;
     font-family: Sora;
 }
+
+nav{
+    background-color: #00243f;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 10vh;
+}
+
+.search input {
+    margin-top: 2.5vh;
+    height: 5vh;
+    width: 20vw
+}
+
+.buttons {
+    height: 10vh;
+    width: 10vw;
+    display: flex;
+    gap: 0.5vw;
+    place-content: center;
+}
+
+.buttons img {
+    margin-top: 1vh;
+    height: 8vh;
+    background-image: none;
+    background-color: #00243f;
+}
