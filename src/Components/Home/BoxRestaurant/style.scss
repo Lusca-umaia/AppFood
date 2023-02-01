@@ -1,0 +1,45 @@
+.boxRestaurants {
+    display: flex;
+    align-items: center;
+    width: 45%;
+    gap: 10px;
+    background-color: #FFF;
+    padding: 10px;
+    border-radius: 15px;
+
+    .LeftBox {
+        .boxLogo {
+            height: 120px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #EEEEEE;
+            border-radius: 10px;
+        }
+    }
+
+    .RightBox {
+        .groupText {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 5px;
+
+            .star {
+                display: flex;
+                gap: 5px;
+                color: #D2F200;
+                font-weight: 700;
+            }
+
+            .ball {
+                height: 5px;
+                border-radius: 50%;
+                width: 5px;
+                background-color: #000;
+            }
+        }
+
+    }
+}

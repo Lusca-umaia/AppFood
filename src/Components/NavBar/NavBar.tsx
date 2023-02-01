@@ -2,14 +2,21 @@ import flit from "../assets/logo.png"
 import archivetick from "../assets/archivetick.svg"
 import vector from "../assets/Vector.svg"
 
+import Lupa from '../../assets/lupa.png'
+
+
 const NavBar: React.FC = () => {
     return (
         <nav>
             <div className="logo">
-                <img src={flit}></img>
+                <img src={flit} ></img>
             </div>
             <div className="search">
-                <input type="text"></input>
+                <img
+                    src={Lupa}
+                />
+
+                <input type="text" placeholder="Busque por restaurante" />
             </div>
             <div className="buttons">
                 <a><img src={archivetick}></img></a>
