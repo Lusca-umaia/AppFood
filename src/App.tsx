@@ -7,6 +7,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import FoodOrder from './Components/Food Orders/FoodOrder';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/orders' element={<FoodOrder />} />
         </Routes>
       </Router>
     </div>
