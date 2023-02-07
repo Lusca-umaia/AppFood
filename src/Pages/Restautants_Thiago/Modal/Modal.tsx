@@ -1,5 +1,5 @@
-import closeButton from "../assets/closebutton.png"
-import { IProductCard } from "./Product"
+import closeButton from "../../assets/closebutton.png"
+import { IProductCard } from "../Product/Product"
 
 interface IModal {
     OnClose: () => void,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios"
-import star from "../assets/Star.svg"
+import star from "../../assets/Star.svg"
 
 interface IRestaurant {
     url: string,

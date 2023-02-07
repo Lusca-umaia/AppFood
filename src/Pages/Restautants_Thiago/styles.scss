@@ -1,15 +1,31 @@
+.effect {
+    position: relative;
+    height: 100%;
+}
+
 .content {
-    position: absolute;
-    margin: 0 14vw;
+    // position: relative;
+    margin: 0 auto;
     width: 70vw;
+    min-height: 100vh;
     background-color: #d9d9d9;
 
+    .modalEffect {
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+
     .restaurant {
-        margin: 3vh auto;
+        margin: 0 auto;
         display: flex;
         width: 65vw;
         height: 15vh;
         background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 1em;
     }
 
     .restaurantText {
@@ -56,9 +72,11 @@
         font-size: small;
         display: flex;
         flex-wrap: wrap;
+        border-radius: 1em;
         width: 32vw;
         height: 33vh;
         background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .leftBox {
@@ -123,17 +141,17 @@
 
 .backdrop {
     display: flex;
-    height: 141vh;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
-    position: absolute;
     z-index: 1;
+    position: absolute;
 
     .modal {
-        left: 75vw;
         width: 25vw;
-        height: auto;
         background-color: #d9d9d9;
+        border-bottom-left-radius: 1em;
+        right: 0;
+        position: absolute;
     }
 
     .modalHeader {
@@ -253,12 +271,9 @@
     }
 
     .backdrop {
-        height: auto;
 
         .modal {
-            left: 70vw;
             width: 30vw;
-            height: 206vh;
         }
 
         .modalHeader {
