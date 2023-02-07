@@ -1,9 +1,9 @@
 import './style.scss'
 import { useEffect, useState } from 'react'
 
-import add from '../../../assets/add.svg'
+import add from '../../assets/add.svg'
 
-import { IProducts } from '../Pizza'
+import { IProducts } from '../Restaurant'
 
 interface Ifunction {
     functionClick: (click: number, setClick: (value: React.SetStateAction<number>) => void, item: IProducts) => void
@@ -15,6 +15,7 @@ const boxProduct: React.FC<IProducts & Ifunction> = (props) => {
     const [click, setClick] = useState(0)
 
     function clickControl() {
+
         if (props.arrayProduct) {
             let arrayFilter = props.arrayProduct
 

@@ -1,5 +1,5 @@
 import { isHtmlElement } from "react-router-dom/dist/dom"
-import { IProducts } from "../Pizza"
+import { IProducts } from "../Restaurant"
 
 interface IRequest {
     valueArray: IProducts

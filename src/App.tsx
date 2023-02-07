@@ -1,6 +1,5 @@
-import './App.scss'
-import Home from './Components/Home/Home';
-import Pizza from './Components/Pizza_Lucas/Pizza';
+import Home from './Pages/Home/Home';
+import Restaurant from './Pages/Restaurants_Lucas/Restaurant';
 
 import {
   BrowserRouter as Router,
@@ -8,8 +7,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import FoodOrder from './Components/Food Orders/FoodOrder';
-import McDonalds from './Components/McDonalds/McDonalds';
+import FoodOrder from './Pages/Food Orders/FoodOrder';
+import McDonalds from './Pages/McDonalds/McDonalds';
 
 function App() {
 
@@ -19,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/orders' element={<FoodOrder />} />
-          <Route path='/Pizza/:id' element={<Pizza />} />
+          <Route path='/Restaurant/:id' element={<Restaurant />} />
           <Route path='/mcdonalds' element={<McDonalds />} />
         </Routes>
       </Router>

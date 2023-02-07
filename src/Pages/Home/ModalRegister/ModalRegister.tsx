@@ -6,7 +6,7 @@ import { Formik, Field, Form, FormikHelpers } from 'formik';
 
 import axios from 'axios';
 
-import X from '../../../assets/X_Yellow.svg'
+import X from '../../assets/X_Yellow.svg'
 
 interface Values {
     avaliacao: number;

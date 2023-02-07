@@ -1,4 +1,4 @@
-import Star from '../../../assets/Vector.svg'
+import Star from '../../assets/Star.svg'
 
 import { IRestaurants } from '../Home'
 
@@ -10,7 +10,7 @@ const BoxRestaurant: React.FC<IRestaurants> = (props) => {
 
 
     return (
-        <Link to={(props.id == 1 ? '/mcdonalds' : `/Pizza/${props.id}`)}>
+        <Link to={(props.id == 1 ? '/mcdonalds' : `/Restaurant/${props.id}`)}>
             <div className="boxRestaurants">
                 <div className="LeftBox">
                     <img

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios"
-import star from "../../assets/Vector.svg"
+import star from "../assets/Star.svg"
 
 interface IRestaurant {
     url: string,
@@ -24,14 +24,14 @@ const Restaurant: React.FC = () => {
         getRestaurant()
     }, [])
 
-    async function fetchRestaurant(id : number) {
-        const {data} = await axios.get('https://apigenerator.dronahq.com/api/dstqgR3A/restaurantes/' + id)  
+    async function fetchRestaurant(id: number) {
+        const { data } = await axios.get('https://apigenerator.dronahq.com/api/dstqgR3A/restaurantes/' + id)
         return data
     }
 
     async function getRestaurant() {
         const data: IRestaurant = await fetchRestaurant(1);
-        const place = {url : data.url, nome: data.nome, categoria : data.categoria, avaliacao: data.avaliacao, sobre: data.sobre}
+        const place = { url: data.url, nome: data.nome, categoria: data.categoria, avaliacao: data.avaliacao, sobre: data.sobre }
         setRestaurant((place))
     }
     return (

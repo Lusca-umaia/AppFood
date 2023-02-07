@@ -2,8 +2,8 @@ import cart from '../assets/cart.svg'
 import flit from "../assets/logo.png"
 import archivetick from "../assets/archivetick.svg"
 import register from "../assets/Vector.svg"
-import Lupa from '../../assets/lupa.png'
-import Return from '../../assets/return.png'
+import Lupa from '../assets/lupa.png'
+import Return from '../assets/return.png'
 
 import { Link } from "react-router-dom"
 
