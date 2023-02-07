@@ -1,6 +1,6 @@
 .orders {
     margin: 0 auto;
-    height: 120vh;
+    min-height: 150vh;
     width: 70vw;
     background-color: #d9d9d9;
 
@@ -12,15 +12,17 @@
         flex-direction: column;
         justify-content: end;
     }
-    
+
     .order {
         width: 33.5vw;
         background-color: white;
         margin-left: 1vw;
         margin-top: 1vh;
         float: left;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 1em;
     }
-    
+
     .orderUp {
         margin: 0 auto;
         height: 10vh;
@@ -32,18 +34,18 @@
         display: flex;
         font-size: large;
     }
-    
+
     .orderUp span {
         margin: auto 0 auto 1vw
     }
-    
+
     .order img {
         margin: auto 0;
         height: 60px;
         border-style: solid;
         border-radius: 0.5em;
     }
-    
+
     .orderBottom {
         margin: 0 auto;
         height: 10vh;
@@ -51,9 +53,43 @@
         display: flex;
         font-size: large;
     }
-    
+
     .orderBottom span {
         margin: auto 0 auto 1vw;
     }
 }
 
+@media screen and (max-width:800px) {
+    .orders {
+        display: flex;
+        flex-wrap: wrap;    
+        height: 220vh;
+        width: 60vw;
+
+        .title {
+            margin: 0 auto;
+            width: 50vw;
+            height: 10vh;
+            display: flex;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .order {
+            width: 50vw;
+        }
+
+        .orderUp {
+            width: 48vw;
+        }
+
+        .orderBottom {
+            width: 48vw;
+        }
+
+    }
+}

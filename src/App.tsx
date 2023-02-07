@@ -8,7 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import FoodOrder from './Pages/Food Orders/FoodOrder';
-import McDonalds from './Pages/McDonalds/McDonalds';
+import McDonalds from './Pages/Restautants_Thiago/McDonalds';
 
 function App() {
 

@@ -1,4 +1,4 @@
-import Product from "../../McDonalds/Product"
+import Product from "../../Restautants_Thiago/Product/Product"
 
 interface IOrder {
     data: IOrders[],
