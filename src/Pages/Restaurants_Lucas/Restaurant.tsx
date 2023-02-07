@@ -4,7 +4,7 @@ import './style.scss'
 //Hooks
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 //Imgs
 import Star from '../assets/Star.svg'
@@ -31,7 +31,20 @@ export interface IProducts {
 
 import { IRestaurants } from "../Home/Home"
 
+interface ProductsRequest {
+    quantity?: number
+    name?: string
+    productUrl?: string
+}
+interface IResquest {
+    restaurant?: string
+    restaurantUrl?: string
+    products?: Array<ProductsRequest>
+}
+
 const Restaurant: React.FC = () => {
+    const navigate = useNavigate()
+
     //Identificação do restaurante
     const { id } = useParams()
 
@@ -132,6 +145,32 @@ const Restaurant: React.FC = () => {
         setRender(render + 1)
     }
 
+    async function sendRequest() {
+        let objectRestaurant: IResquest = {}
+        let ProductsArray = []
+
+        for (let i = 0; i < arrayProduct.length; i++) {
+            let productObject: ProductsRequest = {}
+            productObject.quantity = arrayProduct[i].quantidade
+            productObject.name = arrayProduct[i].nome
+            productObject.productUrl = arrayProduct[i].url
+
+            ProductsArray.push(productObject)
+        }
+
+        objectRestaurant.restaurant = restaurant[0].nome
+        objectRestaurant.restaurantUrl = restaurant[0].url
+        objectRestaurant.products = ProductsArray
+
+        axios.post('https://apigenerator.dronahq.com/api/UnmKdzm2/Orders', objectRestaurant)
+            .then(() => {
+                localStorage.setItem(`Products${id}`, '[]')
+                navigate('/orders')
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     useEffect(() => {
     }, [render])
@@ -194,7 +233,7 @@ const Restaurant: React.FC = () => {
                                     ))
                                 }
                             </section>
-                            <FooterModal arrayProduct={arrayProduct} />
+                            <FooterModal arrayProduct={arrayProduct} handleClick={sendRequest} />
                         </section>
                     </div>
                 )

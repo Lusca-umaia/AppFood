@@ -23,13 +23,11 @@ interface Ipros {
 const ModalRegister: React.FC<Ipros> = ({ modal }) => {
 
     async function onSubmit(values: Values) {
-        console.log(values)
         axios.post('https://apigenerator.dronahq.com/api/dstqgR3A/restaurantes', values)
             .then(() => window.location.reload())
             .catch(function (error) {
                 console.log(error);
             });
-        ;
     }
 
     const schema = yup.object().shape({

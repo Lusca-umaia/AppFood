@@ -2,6 +2,7 @@ import { IProducts } from "../Restaurant"
 
 interface IProps {
     arrayProduct: Array<IProducts>
+    handleClick: () => void
 }
 
 const FooterModal: React.FC<IProps> = (props) => {
@@ -27,7 +28,7 @@ const FooterModal: React.FC<IProps> = (props) => {
             </article>
             <div className='buttonBox'>
                 {props.arrayProduct.length > 0 &&
-                    <button id='ButtonFinalize'>Finalizar Pedido</button>
+                    <button id='ButtonFinalize' onClick={props.handleClick}>Finalizar Pedido</button>
                 }
             </div>
         </section>
