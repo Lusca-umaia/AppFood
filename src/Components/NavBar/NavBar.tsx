@@ -22,7 +22,7 @@ const NavBar: React.FC<INavBar> = (props) => {
         <nav>
             <div className="logo">
                 <Link to={'/'}><img src={flit} ></img></Link>
-            </div>
+            </div >
             {props.home
                 ? (
                     <div className="search">
@@ -51,7 +51,7 @@ const NavBar: React.FC<INavBar> = (props) => {
                 )
             }
             <div className="buttons">
-                <Link to={'/orders'}><img src={archivetick}></img></Link>
+                <Link to={'/orders'}><img src={archivetick} /></Link>
                 {props.product ? <button onClick={props.modal}><img src={cart}></img></button> : null}
                 {props.home ? <button onClick={props.modalRegister}><img src={register}></img></button> : null}
             </div>
