@@ -1,0 +1,137 @@
+.modal-container {
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    .modal-agroup {
+        background-color: #3C3C3C;
+        display: flex;
+        position: relative;
+        width: 80vw;
+        max-width: 700px;
+        flex-direction: column;
+        padding: 30px;
+        border-radius: 15px;
+
+        .modal-buttonClose {
+            background-color: transparent;
+            position: absolute;
+            top: 10px;
+            cursor: pointer;
+            right: 5%;
+            border: none;
+            transition: .5s all;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+        #modal-text {
+            text-align: center;
+            color: #FFF;
+        }
+
+        .modal-form {
+            display: grid;
+            width: 80%;
+            padding: 5px;
+            margin: auto;
+            grid-template-columns: auto auto;
+            gap: 10px;
+            grid-template-areas:
+                'nome sobre'
+                'categoria sobre'
+                'url avaliacao'
+                'register register'
+            ;
+
+            .modal-groupInput {
+                display: flex;
+                width: 100%;
+                gap: 2px;
+                flex-direction: column;
+
+                label {
+                    font-weight: 700;
+                    color: #FFF;
+                }
+
+                textarea,
+                input {
+                    border: 3px solid transparent;
+                    background-color: #D9D9D9;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    padding: 5px 5px;
+                    outline: none;
+                    transition: .6s all;
+
+                    &:focus {
+                        border-color: #00243f;
+                    }
+                }
+
+                span {
+                    text-align: justify;
+                    color: rgb(255, 167, 167);
+                }
+            }
+
+            #nome_ {
+                grid-area: nome;
+            }
+
+            #categoria_ {
+                grid-area: categoria;
+            }
+
+            #sobre_ {
+                grid-area: sobre;
+
+                textarea {
+                    width: auto;
+                    height: 100%;
+                    resize: none;
+                }
+
+                span {
+                    max-width: 250px !important;
+                }
+            }
+
+            #url_ {
+                grid-area: url;
+            }
+
+            #avaliacao_ {
+                grid-area: avaliacao;
+            }
+
+            #modal-buttonRegister {
+                background: #00243F;
+                padding: 10px;
+                border: none;
+                font-weight: 700;
+                font-size: 1.2em;
+                color: #FFF;
+                border: 3px solid #00243F;
+                border-radius: 10px;
+                grid-area: register;
+                transition: .8s all;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #D9D9D9;
+                    color: #00243F;
+                }
+            }
+        }
+    }
+
+}

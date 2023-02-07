@@ -1,0 +1,268 @@
+.sectionProducts {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+
+    .containerProducts {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1200px;
+        min-height: 100vh;
+        background-color: #D9D9D9;
+        padding: 15px;
+
+        h3 {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 2em;
+            color: #3C3C3C;
+        }
+
+        .headerContainer {
+            display: flex;
+            align-items: center;
+            background-color: #FFF;
+            padding: 14px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+            gap: 20px;
+
+            img {
+                border-radius: 20px;
+            }
+
+            .groupDivider {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+
+                h2 {
+                    font-size: 3em;
+                    margin-right: 10px;
+                }
+
+                .assessment {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    p {
+                        font-size: 2.6em;
+                        font-weight: 700;
+                        color: #D2F200;
+                    }
+                }
+            }
+        }
+
+        .sectionRenderProducts {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .effectModal {
+            background: rgba(165, 164, 164, 0.75);
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+        }
+
+        .modal {
+            position: absolute;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;
+            justify-content: space-between;
+            max-height: 88vh;
+            min-height: 88vh;
+            border-bottom-left-radius: 15px;
+            padding: 12px 0;
+            background-color: whitesmoke;
+            top: 0;
+            transition: .4s all;
+            width: 500px;
+            right: -500px;
+
+            .headerModal {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font-size: 1.3em;
+                font-weight: 700;
+                padding: 10px;
+
+                button {
+                    background-color: transparent;
+                    padding: 10px;
+                    display: flex;
+                    cursor: pointer;
+                    border: 3px solid #000;
+                    border-radius: 10px;
+                    justify-content: center;
+                    align-items: center;
+                    transition: .5s all;
+
+                    &:hover {
+                        opacity: .5;
+                    }
+
+                    img {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+            }
+
+            .requests {
+                background-color: white;
+                padding: 15px 0;
+                margin-bottom: 15px;
+
+                .headerRequests {
+                    display: flex;
+                    width: 90%;
+                    margin: 0 auto;
+                    font-size: 1.8em;
+                    font-weight: 700;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                }
+
+                .bodyRequests {
+                    display: flex;
+                    width: 90%;
+                    margin: 0 auto;
+                    flex-direction: column;
+
+
+                    button {
+                        background-color: transparent;
+                        align-self: flex-end;
+                        color: red;
+                        padding: 5px 15px;
+                        border-radius: 6px;
+                        border: 4px solid transparent;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        transition: .6s all;
+                        cursor: pointer;
+
+                        &:hover {
+                            border-color: red;
+                        }
+                    }
+                }
+            }
+
+            .totalArticle {
+                display: flex;
+                width: 90%;
+                margin: 0 auto;
+                font-size: 1.55em;
+                font-weight: 700;
+                margin-bottom: 15px;
+                justify-content: space-between;
+            }
+
+            .buttonBox {
+                display: flex;
+                justify-content: center;
+
+                #ButtonFinalize {
+                    width: 80%;
+                    border: none;
+                    font-size: 1.4em;
+                    font-weight: 700;
+                    color: #FFF;
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    margin: 0 auto;
+                    align-self: center;
+                    background-color: red;
+                    border: 4px solid red;
+                    cursor: pointer;
+                    transition: .7s all;
+
+                    &:hover {
+                        background-color: #FFF;
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1130px) {
+    .sectionProducts {
+        .containerProducts {
+            .sectionRenderProducts {
+                flex-direction: column;
+
+                .boxProducts {
+                    margin: 0 auto;
+                    width: 80%;
+
+                    .left {
+                        width: 70%;
+                    }
+                }
+            }
+
+            .headerContainer {
+                .groupDivider {
+                    h2 {
+                        font-size: 2.2em;
+                        margin-right: 10px;
+                    }
+
+                    .assessment {
+                        img {
+                            height: 40px;
+                        }
+
+                        p {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .sectionProducts {
+        .containerProducts {
+            .sectionRenderProducts {
+                .boxProducts {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .sectionProducts {
+        .containerProducts {
+            width: 95%;
+
+            .sectionRenderProducts {
+                .boxProducts {
+                    width: 100%;
+                }
+            }
+
+            .modal {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    }
+}

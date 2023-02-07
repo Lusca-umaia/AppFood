@@ -1,21 +1,31 @@
 .boxRestaurants {
     display: flex;
     align-items: center;
-    width: 45%;
+    width: 100%;
     gap: 10px;
+    height: auto;
     background-color: #FFF;
     padding: 10px;
     border-radius: 15px;
+    transition: .5s all;
+
+    &:hover {
+        transform: scale(1.03);
+    }
 
     .LeftBox {
-        .boxLogo {
-            height: 120px;
-            width: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #EEEEEE;
-            border-radius: 10px;
+        // .boxLogo {
+        //     height: 120px;
+        //     width: 120px;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     background-color: #EEEEEE;
+        //     border-radius: 10px;
+        // }
+
+        img {
+            border-radius: 15px;
         }
     }
 

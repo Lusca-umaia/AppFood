@@ -1,5 +1,6 @@
 import './App.scss'
 import Home from './Components/Home/Home';
+import Pizza from './Components/Pizza_Lucas/Pizza';
 
 import {
   BrowserRouter as Router,
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/orders' element={<FoodOrder />} />
+          <Route path='/Pizza/:id' element={<Pizza />} />
         </Routes>
       </Router>
     </div>

@@ -3,7 +3,7 @@ import NavBar from "../NavBar/NavBar";
 const FoodOrder: React.FC = () => {
     return (
         <>
-            <NavBar></NavBar>
+            <NavBar product={false} />
             <div className="orders">
                 <div className="title">
                     <h1>Meus Pedidos</h1>

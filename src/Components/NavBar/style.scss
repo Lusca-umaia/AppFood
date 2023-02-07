@@ -1,72 +1,127 @@
 nav {
     background-color: #00243f;
     width: 100%;
-    height: auto;
+    height: 85px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 10px 15px;
     justify-content: space-between;
 
     .logo {
         img {
-            height: 5em;
+            margin-left: 5px;
+            height: 3em;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        .return {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            h2 {
+                color: #fff;
+                font-weight: 700;
+            }
+
+            img {
+                height: 50px;
+            }
         }
     }
 
     .search {
         display: flex;
         align-items: center;
-        padding: 5px 8px;
+        padding: 5px 10px;
         border-radius: 10px;
         background-color: #D9D9D9;
 
-        .logo {
-            margin-left: 2vw;
+        img {
+            height: 40px;
         }
 
-        .logo img {
-            height: 10vh;
-        }
-
-        .search input {
-            margin-top: 2.5vh;
+        input {
             height: 5vh;
-            width: 20vw;
-            text-align: end;
-            font-size: large;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            padding: 15px;
+            font-weight: 700;
+            font-size: 1.2em;
+            width: 25vw;
         }
     }
 
-    input {
-        height: 5vh;
-        border: none;
-        background-color: transparent;
-        outline: none;
-        padding: 15px;
-        font-weight: 700;
-        font-size: 1.2em;
-        width: 25vw;
-    }
 
     .buttons {
-        height: 10vh;
-        width: 10vw;
+        width: auto;
         display: flex;
         gap: 0.5vw;
-        place-content: center;
+
+        a {
+            transition: .6s all;
+
+            &:hover {
+                opacity: .6;
+            }
+        }
 
         img {
-            margin-top: 1vh;
-            height: 8vh;
-            background-image: none;
-            background-color: #00243f;
+            height: 60px;
+        }
+
+
+        button {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            transition: .6s all;
+
+            &:hover {
+                opacity: .6;
+            }
         }
     }
+}
 
-    .buttons img {
-        margin-top: 1vh;
-        height: 8vh;
-        background-image: none;
-        background-color: #00243f;
+@media (max-width: 600px) {
+    nav {
+        display: grid;
+        height: auto;
+        gap: 5px;
+        padding: 20px;
+        grid-template-areas:
+            'logo buttons'
+            'inputAndLink inputAndLink'
+        ;
+
+        .logo {
+            grid-area: logo;
+        }
+
+        a {
+            grid-area: inputAndLink;
+        }
+
+        .search {
+            width: 80%;
+            margin: auto;
+            grid-area: inputAndLink;
+
+            input {
+                width: 100%;
+            }
+        }
+
+
+        .buttons {
+            justify-content: end;
+            grid-area: buttons;
+        }
     }
 }
