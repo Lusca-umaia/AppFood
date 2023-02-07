@@ -8,6 +8,7 @@ import {
   Link
 } from "react-router-dom";
 import FoodOrder from './Components/Food Orders/FoodOrder';
+import McDonalds from './Components/McDonalds/McDonalds';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/orders' element={<FoodOrder />} />
+          <Route path='/mcdonalds' element={<McDonalds />} />
         </Routes>
       </Router>
     </div>
