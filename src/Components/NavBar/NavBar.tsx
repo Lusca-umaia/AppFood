@@ -6,12 +6,15 @@ import Lupa from '../../assets/lupa.png'
 
 import './style.scss'
 
+interface INavBar {
+    OnClick: () => void
+}
 
-const NavBar: React.FC = () => {
+const NavBar: React.FC<INavBar> = (props) => {
     return (
         <nav>
             <div className="logo">
-                <img src={flit} ></img>
+                <img src={flit}></img>
             </div >
             <div className="search">
                 <img
@@ -21,7 +24,7 @@ const NavBar: React.FC = () => {
             </div>
             <div className="buttons">
                 <a href="/orders"><img src={archivetick}></img></a>
-                <img src={vector}></img>
+                <button onClick={() => { props.OnClick() }}><img src={vector}></img></button>
             </div>
         </nav>
     )

@@ -1,0 +1,289 @@
+.content {
+    position: absolute;
+    margin: 0 14vw;
+    width: 70vw;
+    background-color: #d9d9d9;
+
+    .restaurant {
+        margin: 3vh auto;
+        display: flex;
+        width: 65vw;
+        height: 15vh;
+        background-color: white;
+    }
+
+    .restaurantText {
+        margin: auto 0 auto 10px;
+        height: 5vh;
+        width: 65vw;
+        display: flex;
+        gap: 10px
+    }
+
+    .logo {
+        margin: 1vh 0 1vh 1vw;
+        border-radius: 0.5em;
+        height: 13vh;
+        border-style: solid;
+    }
+
+    .star {
+        display: flex;
+        gap: 5px;
+        color: #d2f200;
+        font-weight: 700;
+    }
+
+    .star img {
+        height: 35px;
+    }
+
+    .title {
+        width: 100%;
+        height: auto
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1vw;
+        width: 65vw;
+        height: 120vh;
+        margin: 0 auto;
+    }
+
+    .product {
+        font-size: small;
+        display: flex;
+        flex-wrap: wrap;
+        width: 32vw;
+        height: 33vh;
+        background-color: white;
+    }
+
+    .leftBox {
+        display: flex;
+        flex-wrap: wrap;
+        width: 16vw;
+        margin: 1vh 0 1vh 1vw;
+    }
+
+    .bottomLeftBox {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        justify-content: space-between;
+        width: 16vw;
+    }
+
+    .noPromotional {
+        text-decoration: line-through;
+        margin-left: 1vw;
+    }
+
+    .quantity {
+        font-size: 15px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        place-content: center;
+        gap: 10px;
+        height: 40px;
+        width: 60px;
+        background-color: #d9d9d9;
+        border-radius: 0.5em;
+    }
+
+    .quantity button {
+        height: 25px;
+        width: 25px;
+        border: transparent;
+        background-color: #d9d9d9;
+    }
+
+    .quantity button img {
+        display: flex;
+        align-items: center;
+    }
+
+    .rightBox {
+        margin: auto 1vw auto auto;
+        height: 160px;
+        width: 160px;
+        border-radius: 1em;
+        background-color: #eeeeee;
+    }
+
+    .rightBox img {
+        height: 160px;
+    }
+
+}
+
+.backdrop {
+    display: flex;
+    height: 141vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    z-index: 1;
+
+    .modal {
+        left: 75vw;
+        width: 25vw;
+        height: auto;
+        background-color: #d9d9d9;
+    }
+
+    .modalHeader {
+        display: flex;
+        flex-wrap: wrap;
+        height: 12vh;
+        width: 25vw;
+        justify-content: center;
+
+        button {
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            margin-top: 2vh;
+            border-style: none;
+            background-color: #d9d9d9;
+        }
+
+        span {
+            margin-top: 2.5vh;
+            margin-left: 1vw;
+        }
+    }
+
+    .modalContent {
+
+        .order {
+            height: 27.5vh;
+            margin-top: 1vh;
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vh;
+        }
+
+        button {
+            cursor: pointer;
+            color: #d12b2b;
+            font-weight: 700;
+            background-color: white;
+            border-style: none;
+        }
+    }
+
+    .modalFooter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        float: inline-end;
+        height: 15vh;
+
+        h3 {
+            margin-top: 1vh;
+            margin-left: 1vw;
+            width: 15vw
+        }
+
+        button {
+            cursor: pointer;
+            color: white;
+            width: 10vw;
+            height: 5vh;
+            border-style: none;
+            background-color: #d12b2b;
+        }
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    .content {
+
+        .restaurant {
+            justify-content: center;
+            align-items: center;
+            width: 65vw;
+            height: 25vh;
+        }
+
+        .restaurantText {
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+        }
+
+        .products {
+            height: auto;
+        }
+
+        .product {
+            width: 65vw;
+        }
+
+        .leftBox {
+            width: 35vw;
+        }
+
+        .bottomLeftBox {
+            width: 35vw;
+        }
+
+        .noPromotional {
+            margin-left: 3vw;
+        }
+
+
+        .rightBox {
+            height: 200px;
+            width: 200px;
+        }
+
+        .rightBox img {
+            height: 200px;
+        }
+
+    }
+
+    .backdrop {
+        height: auto;
+
+        .modal {
+            left: 70vw;
+            width: 30vw;
+            height: 206vh;
+        }
+
+        .modalHeader {
+            height: 20vh;
+            width: 30vw;
+            justify-content: left;
+        }
+
+        .modalContent {
+            .order {
+                width: 30vw;
+                height: 32vh;
+                font-size: small;
+            }
+        }
+
+        .modalFooter {
+            width: 30vw;
+            height: 15vh;
+
+            h3 {
+                width: 25vw
+            }
+
+        }
+
+    }
+}
