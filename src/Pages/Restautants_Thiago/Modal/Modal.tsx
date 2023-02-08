@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import { render } from "react-dom"
+
+// @ts-ignore
 import closeButton from "../../assets/closebutton.png"
 import { IProductCard } from "../Product/Product"
 
 
 
 interface IModal {
-    OnClose: () => void,
-    total: number,
-    restaurant: string
+    OnClose: () => void
+    total?: number,
+    restaurant?: string
 }
 
 const Modal: React.FC<IModal> = (props) => {
@@ -18,7 +20,7 @@ const Modal: React.FC<IModal> = (props) => {
 
     const removeProduct = (id: number) => {
         arrayStorage.forEach(item => {
-            if(id === item.id){
+            if (id === item.id) {
                 item.quantidade--
             }
         })
@@ -27,15 +29,15 @@ const Modal: React.FC<IModal> = (props) => {
     }
 
     const CalculateTotal = () => {
-        let total : number = 0
+        let total: number = 0
         arrayStorage.forEach(item => {
-            total = total + (item.quantidade * (item.promocao === 'true' ? (item.valorPromocional) : (item.valor )))
+            total = total + (item.quantidade * (item.promocao === 'true' ? (item.valorPromocional) : (item.valor)))
         })
         return total
     }
 
     useEffect(() => {
-        
+
     }, [render])
 
     return (
@@ -52,7 +54,7 @@ const Modal: React.FC<IModal> = (props) => {
                             if (item.quantidade > 0) {
                                 return (
                                     <div className="order">
-                                        <span><h4>{item.quantidade}x {item.nome}</h4> R$ {item.promocao === 'true' ? (item.valorPromocional * item.quantidade).toFixed(2) : (item.valor * item.quantidade).toFixed(2) }</span>
+                                        <span><h4>{item.quantidade}x {item.nome}</h4> R$ {item.promocao === 'true' ? (item.valorPromocional * item.quantidade).toFixed(2) : (item.valor * item.quantidade).toFixed(2)}</span>
                                         <p>{item.descricao}</p>
                                         <button onClick={() => removeProduct(item.id)}>Remover</button>
                                     </div>

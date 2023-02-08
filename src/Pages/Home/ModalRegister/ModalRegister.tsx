@@ -6,6 +6,7 @@ import { Formik, Field, Form, FormikHelpers } from 'formik';
 
 import axios from 'axios';
 
+// @ts-ignore
 import X from '../../assets/X_Yellow.svg'
 
 interface Values {

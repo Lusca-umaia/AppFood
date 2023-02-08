@@ -17,6 +17,7 @@ async function fetchProducts() {
 function SearchProducts() {
     return (
         <QueryClientProvider client={qc}>
+            {/* @ts-ignore */}
             <SearchProductsWithData />
         </QueryClientProvider>
     );
@@ -24,8 +25,8 @@ function SearchProducts() {
 
 function SearchProductsWithData() {
     const queryClient = useQueryClient();
-    const {data, status} = useQuery("products", fetchProducts);
+    const { data, status } = useQuery("products", fetchProducts);
     // return <Product id={1}/>;
-} 
+}
 
 export default SearchProducts;

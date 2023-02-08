@@ -1,4 +1,6 @@
 import { IRestaurants } from "../../Home/Home"
+
+// @ts-ignore
 import Star from '../../assets/Star.svg'
 
 const HeaderContainer: React.FC<IRestaurants> = (props) => {

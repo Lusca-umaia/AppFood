@@ -7,7 +7,9 @@ import axios from "axios"
 import { useParams, useNavigate } from 'react-router-dom'
 
 //Imgs
+// @ts-ignore
 import Star from '../assets/Star.svg'
+// @ts-ignore
 import X from '../assets/X.png'
 
 //Components

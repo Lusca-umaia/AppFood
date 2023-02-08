@@ -1,3 +1,4 @@
+// @ts-ignore
 import addCircle from "../../assets/addcircle.png";
 import { useEffect, useState } from "react";
 // import Order from "../Food Orders/Order.tsx/Order";

@@ -1,3 +1,4 @@
+// @ts-ignore
 import loading from '../assets/loading.gif'
 
 const Loading: React.FC = () => {
