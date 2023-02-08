@@ -5,7 +5,7 @@ import {
     useQuery,
     useQueryClient
 } from "react-query"
-import Product from "./Product";
+import Product from "../Product/Product";
 
 const qc = new QueryClient();
 

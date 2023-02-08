@@ -1,4 +1,4 @@
-import addCircle from "../assets/addcircle.png"
+import addCircle from "../../assets/addcircle.png"
 import { useEffect, useState } from "react";
 import Order from "../Food Orders/Order.tsx/Order";
 
@@ -43,7 +43,6 @@ const Product: React.FC<IProducts> = ({ id, data, status }) => {
                 }
 
                 array.push(newOrder)
-                localStorage.setItem('orders', JSON.stringify(array))
 
             }
 

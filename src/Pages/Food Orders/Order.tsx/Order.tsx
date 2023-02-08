@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 import Product from "../../McDonalds/Product"
 import Loading from "../../Loading/Loading"
 
+=======
+import Product from "../../Restautants_Thiago/Product/Product"
+>>>>>>> 5190f171479f01ecc795c23f32439080cf3fe64b
 
 interface IOrder {
     data: IOrders[],
