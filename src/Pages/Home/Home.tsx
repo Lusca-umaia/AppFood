@@ -94,11 +94,11 @@ const Home: React.FC = () => {
         if (order) {
             setOrder(order)
             if (order == 'Crescente') {
-                restaurants.sort((a: IRestaurants, b: IRestaurants) => (b.avaliacao ? b.avaliacao : 0) - (a.avaliacao ? a.avaliacao : 0))
+                restaurants.sort((a: IRestaurants, b: IRestaurants) => (a.avaliacao ? a.avaliacao : 0) - (b.avaliacao ? b.avaliacao : 0))
                 setRestaurants(restaurants)
             }
             else {
-                restaurants.sort((a: IRestaurants, b: IRestaurants) => (a.avaliacao ? a.avaliacao : 0) - (b.avaliacao ? b.avaliacao : 0))
+                restaurants.sort((a: IRestaurants, b: IRestaurants) => (b.avaliacao ? b.avaliacao : 0) - (a.avaliacao ? a.avaliacao : 0))
                 setRestaurants(restaurants)
             }
             setRender(render + 1)
