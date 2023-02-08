@@ -16,6 +16,7 @@ import HeaderContainer from './HeaderContainer/HeaderContainer'
 import NavBar from "../NavBar/NavBar"
 import Requests from "./Request/Requests"
 import FooterModal from './FooterModal/FooterModal'
+import Loading from '../Loading/Loading'
 
 //Intefaces
 export interface IProducts {
@@ -179,6 +180,9 @@ const Restaurant: React.FC = () => {
         <div>
             <NavBar product={true} modal={() => setModal(true)} />
             <section className="sectionProducts">
+                {!restaurant[0] && (
+                    <Loading />
+                )}
                 {restaurant[0] && (
                     <div className="containerProducts">
                         <HeaderContainer

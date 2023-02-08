@@ -133,5 +133,36 @@
             }
         }
     }
+}
 
+@media (max-width: 700px) {
+    .modal-container {
+        .modal-agroup {
+            width: 95vw;
+
+            #modal-text {
+                text-align: center;
+                color: #FFF;
+            }
+
+            .modal-form {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-container {
+        .modal-agroup {
+
+            #modal-text {
+                margin: auto;
+                font-size: 1.2em;
+                margin-top: 25px;
+            }
+        }
+    }
 }

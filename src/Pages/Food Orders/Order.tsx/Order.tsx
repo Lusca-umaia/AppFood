@@ -1,4 +1,4 @@
-import Product from "../../Restautants_Thiago/Product/Product"
+import Loading from "../../Loading/Loading"
 
 interface IOrder {
     data: IOrders[],
@@ -31,7 +31,7 @@ const Order: React.FC<IOrder> = ({ data, status }) => {
                         return (
                             <div className="orderBottom">
                                 <img src={product.productUrl}></img>
-                                <span>{product.quantity} {product.name}</span>
+                                <span>{product.quantity}x {product.name}</span>
                             </div>
                         )
                     })}
@@ -42,7 +42,7 @@ const Order: React.FC<IOrder> = ({ data, status }) => {
 
     return (
         <>
-            {status === 'loading' && <div className="products">Loading...</div>}
+            {status === 'loading' && <Loading />}
             {status === 'error' && <div className="products">Error fetching products</div>}
             {status === 'success' && <div className="products">{Orders(data)}</div>}
         </>

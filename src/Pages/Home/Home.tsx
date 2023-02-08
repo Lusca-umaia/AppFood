@@ -1,12 +1,18 @@
+//Style
 import './StyleHome.scss'
 
+//Loading
+import Loading from '../Loading/Loading'
+//Components
 import ModalRegister from './ModalRegister/ModalRegister'
 import NavBar from "../NavBar/NavBar"
 import BoxRestaurant from "./BoxRestaurant/BoxRestaurant"
 
+//Hooks
 import axios from "axios"
 import { useEffect, useState } from "react"
 
+//Interface
 export interface IRestaurants {
     url?: string,
     nome?: string,
@@ -145,6 +151,9 @@ const Home: React.FC = () => {
                     </select>
                 </div>
                 <h2>Restaurantes</h2>
+                {restaurantsTotal.length == 0 ? (
+                    <Loading />
+                ) : null}
                 <div className="restaurantsBoxs">
                     {restaurants &&
                         restaurants.map((item: IRestaurants) => (
