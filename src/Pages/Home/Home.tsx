@@ -151,7 +151,7 @@ const Home: React.FC = () => {
                     </select>
                 </div>
                 <h2>Restaurantes</h2>
-                {restaurants.length == 0 ? (
+                {restaurantsTotal.length == 0 ? (
                     <Loading />
                 ) : null}
                 <div className="restaurantsBoxs">
