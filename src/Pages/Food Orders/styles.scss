@@ -1,11 +1,8 @@
 .orders {
     margin: 0 auto;
-<<<<<<< HEAD
     height: auto;
     min-height: 100vh !important;
-=======
     min-height: 150vh;
->>>>>>> 5190f171479f01ecc795c23f32439080cf3fe64b
     width: 70vw;
     padding: 12px;
     background-color: #d9d9d9;
@@ -32,14 +29,11 @@
         border-radius: 20px;
         height: auto;
         background-color: white;
-<<<<<<< HEAD
-=======
         margin-left: 1vw;
         margin-top: 1vh;
         float: left;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border-radius: 1em;
->>>>>>> 5190f171479f01ecc795c23f32439080cf3fe64b
     }
 
     .orderUp {
@@ -76,7 +70,6 @@
     }
 }
 
-<<<<<<< HEAD
 @media (max-width: 1000px) {
     .orders {
         width: 90vw;
@@ -108,11 +101,13 @@
                 width: 100%;
             }
         }
-=======
+    }
+}
+
 @media screen and (max-width:800px) {
     .orders {
         display: flex;
-        flex-wrap: wrap;    
+        flex-wrap: wrap;
         height: 220vh;
         width: 60vw;
 
@@ -140,7 +135,5 @@
         .orderBottom {
             width: 48vw;
         }
-
->>>>>>> 5190f171479f01ecc795c23f32439080cf3fe64b
     }
 }
