@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios"
+
+// @ts-ignore
 import star from "../../assets/Star.svg"
 
 interface IRestaurant {
