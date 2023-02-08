@@ -1,5 +1,9 @@
+import { useEffect, useState } from "react"
+import { render } from "react-dom"
 import closeButton from "../../assets/closebutton.png"
 import { IProductCard } from "../Product/Product"
+
+
 
 interface IModal {
     OnClose: () => void,
@@ -8,10 +12,32 @@ interface IModal {
 }
 
 const Modal: React.FC<IModal> = (props) => {
-    const orders: string | null = localStorage.getItem('order')
-    const logger = () => {
-        console.log(orders)
+    let arrayLocal = (localStorage.getItem('orders'))
+    let arrayStorage: Array<IProductCard> = (localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
+    const [render, setRender] = useState(0)
+
+    const removeProduct = (id: number) => {
+        arrayStorage.forEach(item => {
+            if(id === item.id){
+                item.quantidade--
+            }
+        })
+        localStorage.setItem('orders', JSON.stringify(arrayStorage))
+        setRender(render + 1)
     }
+
+    const CalculateTotal = () => {
+        let total : number = 0
+        arrayStorage.forEach(item => {
+            total = total + (item.quantidade * (item.promocao === 'true' ? (item.valorPromocional) : (item.valor )))
+        })
+        return total
+    }
+
+    useEffect(() => {
+        
+    }, [render])
+
     return (
         <>
             <div className="backdrop">
@@ -22,16 +48,23 @@ const Modal: React.FC<IModal> = (props) => {
                         <h3>Mcdonald's- Shopping Analia Franco</h3>
                     </div>
                     <div className="modalContent">
-                        <div className="order">
-                            <span><h4>1x Big Tasty</h4> R$ 24.99</span>
-                            <p>Composto pelo nosso pão tipo brioche, hambúrguer de carne 100% bovina, a nova Méquinese, exclusiva maionese especial com sabor de carne defumada, alface, tomate, fatias de bacon e queijo sabor cheddar, acompanhamento e bebida</p>
-                            <button onClick={logger}>Remover</button>
-                        </div>
+                        {arrayStorage.map((item) => {
+                            if (item.quantidade > 0) {
+                                return (
+                                    <div className="order">
+                                        <span><h4>{item.quantidade}x {item.nome}</h4> R$ {item.promocao === 'true' ? (item.valorPromocional * item.quantidade).toFixed(2) : (item.valor * item.quantidade).toFixed(2) }</span>
+                                        <p>{item.descricao}</p>
+                                        <button onClick={() => removeProduct(item.id)}>Remover</button>
+                                    </div>
+                                )
+                            }
+                        })
 
+                        }
                     </div>
 
                     <div className="modalFooter">
-                        <h3>Total <span>R${props.total}</span></h3>
+                        <h3>Total <span>R${CalculateTotal().toFixed(2)}</span></h3>
                         <button>Finalizar Pedido</button>
                     </div>
 

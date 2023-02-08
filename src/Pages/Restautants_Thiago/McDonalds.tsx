@@ -2,6 +2,7 @@ import NavBar from "../NavBar/NavBar";
 import "./styles.scss"
 import Restaurant from "./RenderRestaurant/RenderRestaurant";
 import SearchProducts from "./RenderProducts/RenderProducts";
+import Product from "./Product/Product";
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 
@@ -22,7 +23,9 @@ const McDonalds: React.FC = () => {
                         </div>
                     ) : null}
                     <Restaurant></Restaurant>
-                    <SearchProducts></SearchProducts>
+                    <div className="products">
+                        <Product id={1}></Product>
+                    </div>
                 </div>
             </section>
 
