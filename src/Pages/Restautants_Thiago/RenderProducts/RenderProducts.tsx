@@ -5,7 +5,7 @@ import {
     useQuery,
     useQueryClient
 } from "react-query"
-import Product from "../Product/Product";
+// import Product from "../Product/Product";
 
 const qc = new QueryClient();
 
@@ -25,7 +25,7 @@ function SearchProducts() {
 function SearchProductsWithData() {
     const queryClient = useQueryClient();
     const {data, status} = useQuery("products", fetchProducts);
-    return <Product id={1} data={data} status={status} />;
+    // return <Product id={1}/>;
 } 
 
 export default SearchProducts;
