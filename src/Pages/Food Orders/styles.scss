@@ -1,30 +1,38 @@
 .orders {
     margin: 0 auto;
-    height: 120vh;
+    height: auto;
+    min-height: 100vh !important;
     width: 70vw;
+    padding: 12px;
     background-color: #d9d9d9;
 
+    .products {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
     .title {
-        margin-left: 1vw;
+        margin-left: 20px;
         width: 70vw;
-        height: 10vh;
+        margin: 20px;
         display: flex;
         flex-direction: column;
         justify-content: end;
     }
-    
+
     .order {
-        width: 33.5vw;
+        padding: 20px;
+        width: 48%;
+        border-radius: 20px;
+        height: auto;
         background-color: white;
-        margin-left: 1vw;
-        margin-top: 1vh;
-        float: left;
     }
-    
+
     .orderUp {
         margin: 0 auto;
-        height: 10vh;
-        width: 31.5vw;
+        padding: 5px;
         border-style: solid;
         border-top: transparent;
         border-left: transparent;
@@ -32,28 +40,60 @@
         display: flex;
         font-size: large;
     }
-    
+
     .orderUp span {
-        margin: auto 0 auto 1vw
+        font-weight: 700;
+        margin: auto 0 auto 1vw;
     }
-    
+
     .order img {
         margin: auto 0;
         height: 60px;
-        border-style: solid;
         border-radius: 0.5em;
     }
-    
+
     .orderBottom {
-        margin: 0 auto;
-        height: 10vh;
-        width: 31.5vw;
+        margin: 10px auto;
         display: flex;
+        font-weight: 700;
         font-size: large;
     }
-    
+
     .orderBottom span {
         margin: auto 0 auto 1vw;
     }
 }
 
+@media (max-width: 1000px) {
+    .orders {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .orders {
+        width: 90vw;
+
+        .products {
+            flex-direction: column;
+
+            .order {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .orders {
+        width: 100vw;
+
+        .products {
+            flex-direction: column;
+
+            .order {
+                width: 100%;
+            }
+        }
+    }
+}
