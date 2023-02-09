@@ -1,3 +1,4 @@
+// @ts-ignore
 import addCircle from "../../assets/addcircle.png";
 import { useEffect, useState } from "react";
 // import Order from "../Food Orders/Order.tsx/Order";
@@ -22,7 +23,6 @@ const Product: React.FC<IProducts> = (props) => {
     const [arrayOrders, setArrayOrders] = useState<IProductCard[]>([])
     let arrayLocal = (localStorage.getItem('orders'))
     let arrayStorage: Array<IProductCard> = (localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
-    const [render, setRender] = useState(0)
 
     async function fetchProducts() {
         const { data } = await axios.get('https://apigenerator.dronahq.com/api/3yNrDssc/produtos');
@@ -48,14 +48,15 @@ const Product: React.FC<IProducts> = (props) => {
         })
         setArrayOrders(array)
         localStorage.setItem('orders', JSON.stringify(array))
+        arrayStorage = JSON.parse(localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
     }
 
-    const RenderQuantity = (id : number, ) => {
-        arrayStorage = (localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
-        let quantity : number = 0
+    const RenderQuantity = (id: number) => {
+        let quantity: number = 0
         arrayStorage.map(item => {
-            if(id === item.id)
-            quantity = item.quantidade
+            if (id === item.id) {
+                quantity = item.quantidade
+            }
         })
         return quantity
     }
@@ -63,7 +64,7 @@ const Product: React.FC<IProducts> = (props) => {
     return (
         <>
             {
-                arrayOrders.map((product, index) => {
+                arrayOrders.map((product) => {
                     if (product.promocao === "false") {
                         return (
                             <div key={product.id} className="product">
@@ -74,7 +75,7 @@ const Product: React.FC<IProducts> = (props) => {
                                         <h3>R$ {product.valor.toFixed(2)}</h3>
                                         <div className="quantity">
                                             <button onClick={() => addToArray(product)}><img src={addCircle}></img></button>
-                                            <span>{RenderQuantity(product.id) || 0}</span>
+                                            <span>{RenderQuantity(product.id)}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +95,7 @@ const Product: React.FC<IProducts> = (props) => {
                                         <h3>R${product.valorPromocional.toFixed(2)}</h3><span className="noPromotional">R${product.valor.toFixed(2)}</span>
                                         <div className="quantity">
                                             <button onClick={() => addToArray(product)}><img src={addCircle}></img></button>
-                                            <span>{RenderQuantity(product.id) || 0}</span>
+                                            <span>{RenderQuantity(product.id)}</span>
                                         </div>
                                     </div>
                                 </div>

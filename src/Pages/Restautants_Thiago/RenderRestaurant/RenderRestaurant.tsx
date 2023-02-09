@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios"
+// @ts-ignore
 import star from "../../assets/Star.svg"
 
-interface IRestaurant {
+export interface IRestaurant {
     url: string,
     nome: string,
     categoria: string,
@@ -34,6 +35,7 @@ const Restaurant: React.FC = () => {
         const place = { url: data.url, nome: data.nome, categoria: data.categoria, avaliacao: data.avaliacao, sobre: data.sobre }
         setRestaurant((place))
     }
+
     return (
         <div className="restaurant">
             <img className="logo" src={restaurant.url}></img>

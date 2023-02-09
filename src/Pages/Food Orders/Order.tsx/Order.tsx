@@ -20,7 +20,7 @@ interface IOrders {
 
 const Order: React.FC<IOrder> = ({ data, status }) => {
     const Orders = (orders: IOrders[]) => {
-        return orders.map((order) => {
+        return orders.sort((a,b) => b.id && a.id ? b.id - a.id : 0).map((order) => {
             return (
                 <div key={order.id} className="order">
                     <div className="orderUp">
