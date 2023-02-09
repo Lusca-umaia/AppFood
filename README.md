@@ -32,4 +32,4 @@ A página do Thiago corresponde à página do mcdonald's, e as demais são refer
 ReactJs - TypeScript - Sass - Formik - Yup - Axios 
 
 ## Você pode acessá-lo por meio deste link:
-"https://deliver-app-black.vercel.app"
+"https://app-food-six.vercel.app"
