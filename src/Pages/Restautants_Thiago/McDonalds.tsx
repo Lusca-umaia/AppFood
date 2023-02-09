@@ -1,10 +1,9 @@
 import NavBar from "../NavBar/NavBar";
 import "./styles.scss"
 import Restaurant from "./RenderRestaurant/RenderRestaurant";
-import SearchProducts from "./RenderProducts/RenderProducts";
 import Product from "./Product/Product";
 import { useState } from "react";
-import Modal from "./Modal/Modal";
+import OrdersModal from "./Modal/OrdersModal";
 
 const McDonalds: React.FC = () => {
     const [isModalVisible, setModalVisible] = useState(false)
@@ -13,7 +12,7 @@ const McDonalds: React.FC = () => {
         <>
             <NavBar modal={() => setModalVisible(true)} product={true}></NavBar>
             {isModalVisible ? (
-                <Modal OnClose={() => setModalVisible(false)}></Modal>
+                <OrdersModal OnClose={() => setModalVisible(false)}></OrdersModal>
             ) : null}
             <section className="effect">
                 <div className="content">
