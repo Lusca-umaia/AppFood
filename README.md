@@ -30,3 +30,6 @@ A página do Thiago corresponde à página do mcdonald's, e as demais são refer
 
 ## Tecnologias
 ReactJs - TypeScript - Sass - Formik - Yup - Axios 
+
+## Você pode acessá-lo por meio deste link:
+"https://app-food-six.vercel.app"

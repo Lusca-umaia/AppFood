@@ -7,7 +7,9 @@ import axios from "axios"
 import { useParams, useNavigate } from 'react-router-dom'
 
 //Imgs
+// @ts-ignore
 import Star from '../assets/Star.svg'
+// @ts-ignore
 import X from '../assets/X.png'
 
 //Components
@@ -64,6 +66,7 @@ const Restaurant: React.FC = () => {
 
     //Controle do modal
     const [modal, setModal] = useState(false)
+    const [newModal, setNewModal] = useState(false)
 
     //Constante de renderização, que torna a atualização dos dados imediata
     const [render, setRender] = useState(0)
@@ -146,7 +149,9 @@ const Restaurant: React.FC = () => {
         setRender(render + 1)
     }
 
-    async function sendRequest() {
+    async function sendRequest(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+
         let objectRestaurant: IResquest = {}
         let ProductsArray = []
 
@@ -237,8 +242,33 @@ const Restaurant: React.FC = () => {
                                     ))
                                 }
                             </section>
-                            <FooterModal arrayProduct={arrayProduct} handleClick={sendRequest} />
+                            <FooterModal arrayProduct={arrayProduct} handleClick={() => {
+                                setNewModal(true)
+                                setModal(false)
+                            }} />
+                            {/* <FooterModal arrayProduct={arrayProduct} handleClick={sendRequest} /> */}
                         </section>
+                        {newModal ? (
+                            <div className='newModalClient'>
+                                <button className='buttonNewModal' onClick={() => setNewModal(false)}>
+                                    <img
+                                        src={X}
+                                    />
+                                </button>
+                                <form onSubmit={(e) => sendRequest(e)}>
+                                    <h3>Confirme seu pedido</h3>
+                                    <div>
+                                        <label htmlFor="nome">Nome:</label>
+                                        <input type={`text`} id='nome' required />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email">Email:</label>
+                                        <input type={`email`} id='email' required />
+                                    </div>
+                                    <button className='buttonSubmit'>Enviar</button>
+                                </form>
+                            </div>
+                        ) : null}
                     </div>
                 )
                 }

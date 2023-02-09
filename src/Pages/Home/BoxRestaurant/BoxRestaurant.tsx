@@ -1,3 +1,4 @@
+// @ts-ignore
 import Star from '../../assets/Star.svg'
 
 import { IRestaurants } from '../Home'

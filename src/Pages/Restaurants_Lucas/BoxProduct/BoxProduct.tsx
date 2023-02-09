@@ -1,6 +1,7 @@
 import './style.scss'
 import { useEffect, useState } from 'react'
 
+// @ts-ignore
 import add from '../../assets/add.svg'
 
 import { IProducts } from '../Restaurant'

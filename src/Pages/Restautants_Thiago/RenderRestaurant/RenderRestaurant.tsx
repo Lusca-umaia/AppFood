@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios"
+<<<<<<< HEAD
+=======
+
+>>>>>>> af78a13f876f19b5464b315b618b49f5f32b766e
 // @ts-ignore
 import star from "../../assets/Star.svg"
 

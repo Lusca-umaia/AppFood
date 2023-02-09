@@ -1,8 +1,14 @@
+// @ts-ignore
 import cart from '../assets/cart.svg'
+// @ts-ignore
 import flit from "../assets/logo.png"
+// @ts-ignore
 import archivetick from "../assets/archivetick.svg"
+// @ts-ignore
 import register from "../assets/Vector.svg"
+// @ts-ignore
 import Lupa from '../assets/lupa.png'
+// @ts-ignore
 import Return from '../assets/return.png'
 
 import { Link } from "react-router-dom"
