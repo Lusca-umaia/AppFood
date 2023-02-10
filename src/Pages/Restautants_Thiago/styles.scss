@@ -75,7 +75,7 @@
         flex-wrap: wrap;
         border-radius: 1em;
         width: 32vw;
-        height: 30vh;
+        height: auto;
         background-color: white;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
@@ -169,6 +169,7 @@
             margin-top: 2vh;
             border-style: none;
             background-color: #d9d9d9;
+            border-radius: 1em;
         }
 
         span {
@@ -182,7 +183,7 @@
         .order {
             padding: 1vh;
             border-radius: 1em;
-            height: 28.5vh;
+            height: auto;
             width: 33vw;
             margin: 1vh 1vw;
             background-color: white;
@@ -300,7 +301,7 @@
         }
 
         .product {
-            height: 35vh;
+            height: auto;
             width: 65vw;
         }
 
@@ -343,7 +344,7 @@
         .modalContent {
             .order {
                 width: 40vw;
-                height: 30vh;
+                height: auto;
                 font-size: small;
             }
         }
@@ -358,6 +359,7 @@
 
             button {
                 width: 30vw;
+                border-radius: 1em;
             }
 
         }
@@ -365,9 +367,12 @@
     }
 
     .registerUser {
-        height: 200vh;
+        height: 170vh;
+
         form {
 
+            .forms {
+            }
             button {
                 margin-left: 10%
             }
@@ -376,3 +381,141 @@
 
 }
 
+@media screen and (max-width:360px) {
+    .content {
+        width: 85vw;
+
+        .restaurant {
+            height: 12vh;
+            width: 80vw;
+        }
+
+        .restaurantText {
+            height: 8vh;
+            font-size: small;
+        }
+
+        .logo {
+            height: 8vh;
+        }
+
+        .star {
+            font-size: 25px;
+        }
+
+        .star img {
+            height: 25px;
+        }
+
+        .title {
+            width: 100%;
+            height: auto
+        }
+
+        .products {
+            width: 80vw;
+        }
+
+        .product {
+            width: 80vw;
+            height: 30vh;
+        }
+
+        .leftBox {
+            width: 45vw;
+            font-size: smaller;
+        }
+
+        .bottomLeftBox {
+            width: 50vw;
+        }
+
+        .noPromotional {
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
+
+
+        .rightBox {
+            height: 80px;
+            width: 80px;
+        }
+
+        .rightBox img {
+            height: 80px;
+        }
+    }
+
+    .backdrop {
+        .modal {
+            width: 60vw;
+        }
+
+        .modalHeader {
+            height: 12vh;
+            width: 60vw;
+            font-size: small;
+            }
+        
+
+        .modalContent {
+
+            .order {
+                width: 57vw;
+                height: auto;
+            }
+        }
+
+        .modalFooter {
+            width: 60vw;
+            h3 {
+                font-size: medium;
+                width: 59vw;
+
+                span {
+                    margin-left: 2vw;
+                }
+            }
+
+            button {
+                border-radius: 1em;
+                width: 30vw;
+                height: 5vh;
+                background-color: #d12b2b;
+            }
+        }
+
+    }
+
+    .registerUser {
+        height: 168.1vh;
+
+        form {
+            margin: auto;
+            width: 60vw;
+            height: 40vh;
+            background-color: white;
+            border-radius: 1em;
+
+            .forms {
+                width: 55vw;
+                height: 3vh;
+
+                label {
+                    margin-top: 2vh;
+                    margin-left: 10%;
+                    width: 80%;
+                }
+
+                input {
+                    margin-top: 0.5vh;
+                }
+            }
+
+            button {
+                width: 60vw;
+                margin: 2vh auto 0 auto;
+            }
+        }
+    }
+}
