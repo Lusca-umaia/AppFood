@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 // @ts-ignore\0
 import closeButton from "../../assets/closebutton.png"
-import { IProductCard } from "../Product/Product"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { Formik, useFormik } from "formik"
-
+import { StorageContext } from "../StorageContext/StorageContext";
+import { IProductCard } from "../Product/Product";
 interface IModal {
     OnClose: () => void,
 }
@@ -22,12 +21,10 @@ interface IOrder {
 }
 
 const OrdersModal: React.FC<IModal> = (props) => {
-    let arrayLocal = (localStorage.getItem('orders'))
-    let arrayStorage: Array<IProductCard> = (localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
     const [render, setRender] = useState(0)
     const [isModalVisible, setModalVisible] = useState(false)
     const navigate = useNavigate()
-
+    let { arrayOrders, setArrayOrders, arrayStorage} = useContext(StorageContext)
     // const formik = useFormik({
     //     initialValues: {
     //         nome: '',
@@ -35,7 +32,7 @@ const OrdersModal: React.FC<IModal> = (props) => {
     //         cpf: '',
     //         email: ''
     //     }, onSubmit: (values) => {
-            
+
     //     },
     //     validate: (values) => {
     //         const errors: {
@@ -73,7 +70,7 @@ const OrdersModal: React.FC<IModal> = (props) => {
     //         return errors
     //     }
     // })
-
+    
     const removeProduct = (id: number) => {
         arrayStorage.forEach(item => {
             if (id === item.id) {
@@ -81,6 +78,7 @@ const OrdersModal: React.FC<IModal> = (props) => {
             }
         })
         localStorage.setItem('orders', JSON.stringify(arrayStorage))
+        setArrayOrders(arrayStorage)
         setRender(render + 1)
     }
 
@@ -92,7 +90,7 @@ const OrdersModal: React.FC<IModal> = (props) => {
         return total
     }
 
-    const submitOrder = (e : any) => {
+    const submitOrder = (e: any) => {
         console.log('teste')
         e.preventDefault()
         let orderRestaurant: IOrder = {}
@@ -150,38 +148,33 @@ const OrdersModal: React.FC<IModal> = (props) => {
                                 )
                             }
                         })
-
                         }
                     </div>
                     <div className="modalFooter">
                         <h3>Total: <span>R${calculateTotal().toFixed(2)}</span></h3>
-                        {arrayStorage.map((item) => {
-                            if (item.quantidade > 0) {
-                                return (
-                                    <button key="button" onClick={() => setModalVisible(true)}>Fazer Pedido</button>
-                                )
-                            }
-                        })}
+                        {calculateTotal() > 0 &&
+                            <button key="button" onClick={() => setModalVisible(true)}>Fazer Pedido</button>
+                        }
                         {isModalVisible ? (
-                                <div className="registerUser">
-                                    <form onSubmit={submitOrder}>
-                                        <div className="forms">
-                                            <label htmlFor="nome">Nome:</label>
-                                            <input id="nome" type="text" />
+                            <div className="registerUser">
+                                <form onSubmit={submitOrder}>
+                                    <div className="forms">
+                                        <label htmlFor="nome">Nome:</label>
+                                        <input id="nome" type="text" />
 
-                                            <label htmlFor="cpf">CPF:</label>
-                                            <input id="cpf" type="text" />
+                                        <label htmlFor="cpf">CPF:</label>
+                                        <input id="cpf" type="text" />
 
-                                            <label htmlFor="email">E-mail:</label>
-                                            <input id="email" type="text" />
+                                        <label htmlFor="email">E-mail:</label>
+                                        <input id="email" type="text" />
 
-                                            <label htmlFor="telefone">Telefone:</label>
-                                            <input id="telefone" type="text" />
+                                        <label htmlFor="telefone">Telefone:</label>
+                                        <input id="telefone" type="text" />
 
-                                            <button type="submit">Finalizar Pedido</button>
-                                        </div>
-                                    </form>
-                                </div>
+                                        <button type="submit">Finalizar Pedido</button>
+                                    </div>
+                                </form>
+                            </div>
                         ) : null}
                     </div>
 

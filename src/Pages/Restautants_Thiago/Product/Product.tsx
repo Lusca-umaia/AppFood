@@ -1,8 +1,8 @@
 // @ts-ignore
 import addCircle from "../../assets/addcircle.png";
-import { useEffect, useState } from "react";
-// import Order from "../Food Orders/Order.tsx/Order";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import { StorageContext } from "../StorageContext/StorageContext";
 export interface IProductCard {
     idRestaurante: number,
     nome: string,
@@ -20,9 +20,7 @@ interface IProducts {
 }
 
 const Product: React.FC<IProducts> = (props) => {
-    const [arrayOrders, setArrayOrders] = useState<IProductCard[]>([])
-    let arrayLocal = (localStorage.getItem('orders'))
-    let arrayStorage: Array<IProductCard> = (localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
+    let { arrayOrders, setArrayOrders, arrayStorage} = useContext(StorageContext)
 
     async function fetchProducts() {
         const { data } = await axios.get('https://apigenerator.dronahq.com/api/3yNrDssc/produtos');
@@ -40,7 +38,7 @@ const Product: React.FC<IProducts> = (props) => {
     }, [])
 
     const addToArray = (functionProduct: IProductCard) => {
-        let array = [...arrayOrders]
+        let array = [...arrayStorage]
         array.forEach((product) => {
             if (product.id === functionProduct.id) {
                 product.quantidade++
@@ -48,11 +46,11 @@ const Product: React.FC<IProducts> = (props) => {
         })
         setArrayOrders(array)
         localStorage.setItem('orders', JSON.stringify(array))
-        arrayStorage = JSON.parse(localStorage.getItem('orders') != null ? JSON.parse(arrayLocal ? arrayLocal : '') : [])
+        arrayStorage = JSON.parse(localStorage.getItem('orders') || '')
     }
 
     const RenderQuantity = (id: number) => {
-        let quantity: number = 0
+        let quantity : number = 0
         arrayStorage.map(item => {
             if (id === item.id) {
                 quantity = item.quantidade
